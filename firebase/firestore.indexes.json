@@ -1,0 +1,32 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "querys",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "satus",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "timestamp",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "Journeys",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userID",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "TimeStamp",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
+}
