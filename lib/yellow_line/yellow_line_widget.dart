@@ -75,25 +75,7 @@ class _YellowLineWidgetState extends State<YellowLineWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: [
-                Align(
-                  alignment: const AlignmentDirectional(-1.0, 0.0),
-                  child: Text(
-                    FFLocalizations.of(context).getText(
-                      'mctplyti' /* important: 
-This line intersec... */
-                      ,
-                    ),
-                    textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
-                          color: const Color(0xB1FFFFFF),
-                          fontSize: 8.0,
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ),
-              ],
+              actions: const [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -132,6 +114,31 @@ This line intersec... */
                                   width: 201.46,
                                   height: 821.1,
                                   fit: BoxFit.contain,
+                                ),
+                              ),
+                              SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      width: 341.8,
+                                      height: 100.0,
+                                      decoration: const BoxDecoration(),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'zfejjwjl' /* important: 
+This line intersec... */
+                                          ,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ],

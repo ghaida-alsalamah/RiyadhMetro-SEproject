@@ -231,7 +231,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7wirf5fg': {
       'en': 'Home',
-      'ar': 'الرئيسية',
+      'ar': 'بيت',
     },
   },
   // homepage
@@ -360,7 +360,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'it9ehywa': {
       'en': 'Home',
-      'ar': 'الرئيسية',
+      'ar': 'بيت',
     },
   },
   // about
@@ -411,7 +411,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jg7m6jfa': {
       'en': 'Home',
-      'ar': 'الرئيسية',
+      'ar': 'بيت',
     },
   },
   // routemap
@@ -503,6 +503,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '8di7ihb3': {
       'en': 'Send Email',
       'ar': 'إرسال بريد إلكتروني',
+    },
+    'oxhi5ojn': {
+      'en': 'Answer queries',
+      'ar': 'الرد على الاستفسارات',
     },
     'izyxg6e9': {
       'en': 'Help Center',
@@ -713,7 +717,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cbelyz0r': {
       'en': 'Search...',
-      'ar': 'بحث...',
+      'ar': 'يبحث...',
     },
     '7a2dj12w': {
       'en': 'KAFD',
@@ -1165,7 +1169,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rfmozjok': {
       'en': 'Respond',
-      'ar': '',
+      'ar': 'يرد',
     },
   },
   // resetpassCopy_admin
@@ -1288,7 +1292,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ndjqflkv': {
       'en': 'Purple Line',
-      'ar': 'الخط البنفسجي',
+      'ar': 'الخط الأرجواني',
     },
     'ptbu3twm': {
       'en': 'KAFD\nAn Naseem                          ',
@@ -1373,10 +1377,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Yellow Line',
       'ar': 'الخط الأصفر',
     },
-    'mctplyti': {
-      'en':
-          'important: \nThis line intersects with Purple Line\n start from SABIC Station !',
-      'ar': 'هام:\nيتقاطع هذا الخط مع الخط البنفسجي\nيبدأ من محطة سابك',
+    'zfejjwjl': {
+      'en': 'important: \nThis line intersects with Purple Line\n',
+      'ar': 'هام:\nيتقاطع هذا الخط مع الخط الأرجواني',
     },
     'w6qrrgiu': {
       'en': 'Home',
@@ -1385,13 +1388,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // GreenLine
   {
+    'lqo7nb4i': {
+      'en': 'important: \nThis line intersects with Red Line & Blue Line',
+      'ar': 'هام:\nيتقاطع هذا الخط مع الخط الأحمر والخط الأزرق',
+    },
     '1e5f9g0c': {
       'en': 'Green Line',
       'ar': 'الخط الأخضر',
-    },
-    'ercn06ol': {
-      'en': 'important: \nThis line intersects with \nRed Line & Blue Line',
-      'ar': 'هام:\nيتقاطع هذا الخط مع\nالخط الأحمر والخط الأزرق',
     },
     '1eomdsy2': {
       'en': 'Home',
@@ -1433,20 +1436,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // quaryCopy
   {
     'nk73dmnb': {
-      'en': 'Passenger Queries',
-      'ar': 'استفسارات الركاب',
+      'en': 'Respond Queries',
+      'ar': 'الرد على الاستفسارات',
     },
     'wmtjq4xa': {
-      'en': 'Active Queries',
-      'ar': 'الاستعلامات النشطة',
+      'en': 'Answer Queries',
+      'ar': 'الرد على الاستفسارات',
     },
-    'pw4gia45': {
-      'en': 'Pending responses: ',
-      'ar': 'الردود المعلقة: 0',
+  },
+  // quaryCopy2
+  {
+    'gmmfae7b': {
+      'en': 'Answer Queries',
+      'ar': 'الرد على الاستفسارات',
     },
-    'a0fl3hc1': {
-      'en': 'Respond',
-      'ar': '',
+    '2up29jez': {
+      'en': 'Answer',
+      'ar': 'إجابة',
     },
   },
   // NoJourneys
@@ -1462,29 +1468,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Stats
   {
-    'lybe9u9g': {
+    'njfmsjyf': {
       'en': 'Query Statistics',
-      'ar': '',
+      'ar': 'إحصائيات الاستعلام',
     },
-    '449gfnjx': {
+    'ilhjcstp': {
       'en': 'Last 7 Days',
-      'ar': '',
+      'ar': 'آخر 7 أيام',
     },
-    'hhxnke5r': {
+    'hfxgzko6': {
       'en': 'Total Queries',
-      'ar': '',
+      'ar': 'مجموع الاستعلامات',
     },
-    '0kglccw1': {
-      'en': '0',
-      'ar': '',
-    },
-    'vem5hpjy': {
+    'mwn7sdj7': {
       'en': 'Resolved',
-      'ar': '',
+      'ar': 'تم الحل',
     },
-    'ij6uglbv': {
+    'csp2r8ug': {
       'en': 'Pending',
-      'ar': '',
+      'ar': 'قيد الانتظار',
+    },
+  },
+  // StatsCopy
+  {
+    'g7hl794t': {
+      'en': 'type responce',
+      'ar': 'نوع الاستجابة',
+    },
+    'b11k6p79': {
+      'en': 'TextField',
+      'ar': 'حقل النص',
+    },
+    'syb7m6ee': {
+      'en': 'submet',
+      'ar': 'فرعي',
     },
   },
   // Miscellaneous

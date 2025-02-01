@@ -80,23 +80,6 @@ class _GreenLineWidgetState extends State<GreenLineWidget> {
                   width: 100.0,
                   height: 100.0,
                   decoration: const BoxDecoration(),
-                  child: Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'ercn06ol' /* important: 
-This line intersec... */
-                        ,
-                      ),
-                      textAlign: TextAlign.justify,
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Plus Jakarta Sans',
-                            color: const Color(0xB5FFFFFF),
-                            fontSize: 9.0,
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ),
                 ),
               ],
               centerTitle: false,
@@ -138,7 +121,7 @@ This line intersec... */
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Container(
-                                    width: 458.52,
+                                    width: 458.5,
                                     height: 746.8,
                                     decoration: const BoxDecoration(),
                                     child: ClipRRect(
@@ -146,7 +129,7 @@ This line intersec... */
                                       child: Image.asset(
                                         'assets/images/rrrrrr.jpeg',
                                         width: 218.0,
-                                        height: 843.96,
+                                        height: 844.0,
                                         fit: BoxFit.scaleDown,
                                       ),
                                     ),
@@ -171,6 +154,31 @@ This line intersec... */
                                         height: 821.1,
                                         fit: BoxFit.fitHeight,
                                       ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SingleChildScrollView(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Container(
+                                    width: 320.43,
+                                    height: 100.0,
+                                    decoration: const BoxDecoration(),
+                                    child: Text(
+                                      FFLocalizations.of(context).getText(
+                                        'lqo7nb4i' /* important: 
+This line intersec... */
+                                        ,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Plus Jakarta Sans',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],

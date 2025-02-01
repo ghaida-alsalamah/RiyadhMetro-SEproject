@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'quary_copy_widget.dart' show QuaryCopyWidget;
+import 'quary_copy2_widget.dart' show QuaryCopy2Widget;
 import 'package:flutter/material.dart';
 
-class QuaryCopyModel extends FlutterFlowModel<QuaryCopyWidget> {
+class QuaryCopy2Model extends FlutterFlowModel<QuaryCopy2Widget> {
   ///  Local state fields for this page.
 
   String meesage = ' ';

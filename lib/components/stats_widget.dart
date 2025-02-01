@@ -65,7 +65,7 @@ class _StatsWidgetState extends State<StatsWidget> {
                   children: [
                     Text(
                       FFLocalizations.of(context).getText(
-                        'lybe9u9g' /* Query Statistics */,
+                        'njfmsjyf' /* Query Statistics */,
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
@@ -75,7 +75,7 @@ class _StatsWidgetState extends State<StatsWidget> {
                     ),
                     Text(
                       FFLocalizations.of(context).getText(
-                        '449gfnjx' /* Last 7 Days */,
+                        'ilhjcstp' /* Last 7 Days */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Plus Jakarta Sans',
@@ -115,7 +115,7 @@ class _StatsWidgetState extends State<StatsWidget> {
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'hhxnke5r' /* Total Queries */,
+                            'hfxgzko6' /* Total Queries */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
@@ -133,8 +133,9 @@ class _StatsWidgetState extends State<StatsWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          FFLocalizations.of(context).getText(
-                            '0kglccw1' /* 0 */,
+                          valueOrDefault<String>(
+                            FFAppState().numSolved.toString(),
+                            '0',
                           ),
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
@@ -146,7 +147,7 @@ class _StatsWidgetState extends State<StatsWidget> {
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'vem5hpjy' /* Resolved */,
+                            'mwn7sdj7' /* Resolved */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .bodySmall
@@ -178,7 +179,7 @@ class _StatsWidgetState extends State<StatsWidget> {
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            'ij6uglbv' /* Pending */,
+                            'csp2r8ug' /* Pending */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .bodySmall

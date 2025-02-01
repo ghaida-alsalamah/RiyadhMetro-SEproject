@@ -183,4 +183,16 @@ class FFAppState extends ChangeNotifier {
   set numQueries(int value) {
     _numQueries = value;
   }
+
+  int _numSolved = 0;
+  int get numSolved => _numSolved;
+  set numSolved(int value) {
+    _numSolved = value;
+  }
+
+  String _replay = '';
+  String get replay => _replay;
+  set replay(String value) {
+    _replay = value;
+  }
 }

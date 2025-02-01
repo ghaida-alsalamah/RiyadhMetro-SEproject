@@ -30,10 +30,16 @@ class AdminqRecord extends FirestoreRecord {
   String get message => _message ?? '';
   bool hasMessage() => _message != null;
 
+  // "status" field.
+  String? _status;
+  String get status => _status ?? '';
+  bool hasStatus() => _status != null;
+
   void _initializeFields() {
     _email = snapshotData['Email'] as String?;
     _timestamp = snapshotData['timestamp'] as DateTime?;
     _message = snapshotData['message'] as String?;
+    _status = snapshotData['status'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -73,12 +79,14 @@ Map<String, dynamic> createAdminqRecordData({
   String? email,
   DateTime? timestamp,
   String? message,
+  String? status,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'Email': email,
       'timestamp': timestamp,
       'message': message,
+      'status': status,
     }.withoutNulls,
   );
 
@@ -92,12 +100,13 @@ class AdminqRecordDocumentEquality implements Equality<AdminqRecord> {
   bool equals(AdminqRecord? e1, AdminqRecord? e2) {
     return e1?.email == e2?.email &&
         e1?.timestamp == e2?.timestamp &&
-        e1?.message == e2?.message;
+        e1?.message == e2?.message &&
+        e1?.status == e2?.status;
   }
 
   @override
-  int hash(AdminqRecord? e) =>
-      const ListEquality().hash([e?.email, e?.timestamp, e?.message]);
+  int hash(AdminqRecord? e) => const ListEquality()
+      .hash([e?.email, e?.timestamp, e?.message, e?.status]);
 
   @override
   bool isValidKey(Object? o) => o is AdminqRecord;

@@ -1,9 +1,7 @@
 import '/backend/backend.dart';
-import '/components/stats_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'quary_copy_model.dart';
 export 'quary_copy_model.dart';
@@ -52,14 +50,23 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
             appBar: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
-              leading: Icon(
-                Icons.arrow_back,
-                color: FlutterFlowTheme.of(context).primaryText,
-                size: 24.0,
+              leading: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed('helpcenter');
+                },
+                child: Icon(
+                  Icons.arrow_back,
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  size: 24.0,
+                ),
               ),
               title: Text(
                 FFLocalizations.of(context).getText(
-                  'nk73dmnb' /* Passenger Queries */,
+                  'nk73dmnb' /* Respond Queries */,
                 ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Urbanist',
@@ -92,14 +99,14 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      StreamBuilder<List<QuerysRecord>>(
-                        stream: queryQuerysRecord(
-                          queryBuilder: (querysRecord) => querysRecord
+                      StreamBuilder<List<AdminqRecord>>(
+                        stream: queryAdminqRecord(
+                          queryBuilder: (adminqRecord) => adminqRecord
                               .where(
-                                'satus',
+                                'status',
                                 isEqualTo: valueOrDefault<String>(
                                   '',
-                                  'pending',
+                                  'solved',
                                 ),
                               )
                               .orderBy('timestamp', descending: true),
@@ -120,15 +127,15 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                               ),
                             );
                           }
-                          List<QuerysRecord> containerQuerysRecordList =
+                          List<AdminqRecord> containerAdminqRecordList =
                               snapshot.data!;
                           // Return an empty Container when the item does not exist.
                           if (snapshot.data!.isEmpty) {
                             return Container();
                           }
-                          final containerQuerysRecord =
-                              containerQuerysRecordList.isNotEmpty
-                                  ? containerQuerysRecordList.first
+                          final containerAdminqRecord =
+                              containerAdminqRecordList.isNotEmpty
+                                  ? containerAdminqRecordList.first
                                   : null;
 
                           return Material(
@@ -163,31 +170,13 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'wmtjq4xa' /* Active Queries */,
+                                                'wmtjq4xa' /* Answer Queries */,
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineSmall
                                                       .override(
                                                         fontFamily: 'Urbanist',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'pw4gia45' /* Pending responses:  */,
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Plus Jakarta Sans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryText,
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
@@ -233,39 +222,10 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        Text(
-                                                          valueOrDefault<
-                                                              String>(
-                                                            containerQuerysRecord
-                                                                ?.email,
-                                                            '[Email]',
-                                                          ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                letterSpacing:
-                                                                    0.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
                                                     Text(
                                                       dateTimeFormat(
                                                         "yMMMd",
-                                                        containerQuerysRecord!
+                                                        containerAdminqRecord!
                                                             .timestamp!,
                                                         locale:
                                                             FFLocalizations.of(
@@ -289,11 +249,9 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                                                   ],
                                                 ),
                                                 Text(
-                                                  valueOrDefault<String>(
-                                                    containerQuerysRecord
-                                                        .message,
-                                                    'message...',
-                                                  ),
+                                                  containerAdminqRecord
+                                                      .hasMessage()
+                                                      .toString(),
                                                   textAlign: TextAlign.start,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -303,59 +261,6 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                                                             'Plus Jakarta Sans',
                                                         letterSpacing: 0.0,
                                                       ),
-                                                ),
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.end,
-                                                  children: [
-                                                    FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
-                                                      },
-                                                      text: FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'a0fl3hc1' /* Respond */,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        width: 100.0,
-                                                        height: 36.0,
-                                                        padding:
-                                                            const EdgeInsets.all(8.0),
-                                                        iconPadding:
-                                                            const EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodySmall
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .info,
-                                                                  letterSpacing:
-                                                                      0.0,
-                                                                ),
-                                                        elevation: 0.0,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(18.0),
-                                                      ),
-                                                    ),
-                                                  ],
                                                 ),
                                               ].divide(const SizedBox(height: 12.0)),
                                             ),
@@ -369,14 +274,6 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
                             ),
                           );
                         },
-                      ),
-                      Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
-                        child: wrapWithModel(
-                          model: _model.statsModel,
-                          updateCallback: () => safeSetState(() {}),
-                          child: const StatsWidget(),
-                        ),
                       ),
                     ].divide(const SizedBox(height: 24.0)),
                   ),

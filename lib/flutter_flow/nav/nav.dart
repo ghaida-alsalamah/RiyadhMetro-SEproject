@@ -237,6 +237,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'quaryCopy',
           path: '/quaryCopy',
           builder: (context, params) => const QuaryCopyWidget(),
+        ),
+        FFRoute(
+          name: 'quaryCopy2',
+          path: '/quaryCopy2',
+          builder: (context, params) => const QuaryCopy2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -37,3 +37,4 @@ export '/yellow_line/yellow_line_widget.dart' show YellowLineWidget;
 export '/green_line/green_line_widget.dart' show GreenLineWidget;
 export '/route_and_lines/route_and_lines_widget.dart' show RouteAndLinesWidget;
 export '/quary_copy/quary_copy_widget.dart' show QuaryCopyWidget;
+export '/quary_copy2/quary_copy2_widget.dart' show QuaryCopy2Widget;

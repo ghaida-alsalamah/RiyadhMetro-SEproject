@@ -1,4 +1,5 @@
 import '/backend/backend.dart';
+import '/components/stats_copy_widget.dart';
 import '/components/stats_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -245,9 +246,44 @@ class _QuaryWidgetState extends State<QuaryWidget> {
                                                     MainAxisAlignment.end,
                                                 children: [
                                                   FFButtonWidget(
-                                                    onPressed: () {
-                                                      print(
-                                                          'Button pressed ...');
+                                                    onPressed: () async {
+                                                      await showModalBottomSheet(
+                                                        isScrollControlled:
+                                                            true,
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        enableDrag: false,
+                                                        context: context,
+                                                        builder: (context) {
+                                                          return GestureDetector(
+                                                            onTap: () {
+                                                              FocusScope.of(
+                                                                      context)
+                                                                  .unfocus();
+                                                              FocusManager
+                                                                  .instance
+                                                                  .primaryFocus
+                                                                  ?.unfocus();
+                                                            },
+                                                            child: Padding(
+                                                              padding: MediaQuery
+                                                                  .viewInsetsOf(
+                                                                      context),
+                                                              child:
+                                                                  const StatsCopyWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          safeSetState(() {}));
+
+                                                      await QuerysRecord
+                                                          .collection
+                                                          .doc()
+                                                          .set(
+                                                              createQuerysRecordData(
+                                                            satus: 'solved',
+                                                          ));
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)
@@ -312,6 +348,11 @@ class _QuaryWidgetState extends State<QuaryWidget> {
                       updateCallback: () => safeSetState(() {}),
                       child: const StatsWidget(),
                     ),
+                  ),
+                  wrapWithModel(
+                    model: _model.statsCopyModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: const StatsCopyWidget(),
                   ),
                 ],
               ),
