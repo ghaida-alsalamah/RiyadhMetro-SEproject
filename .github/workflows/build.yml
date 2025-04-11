@@ -28,6 +28,10 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+      - name: Build Flutter Web
+        run: flutter build web
+
+
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
