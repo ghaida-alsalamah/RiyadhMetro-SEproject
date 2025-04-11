@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'journey_history_widget.dart' show JourneyHistoryWidget;
 import 'package:flutter/material.dart';
 

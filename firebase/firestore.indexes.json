@@ -29,11 +29,15 @@
       ]
     },
     {
-      "collectionGroup": "Adminq",
+      "collectionGroup": "querys",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "status",
+          "fieldPath": "Email",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "satus",
           "order": "ASCENDING"
         },
         {

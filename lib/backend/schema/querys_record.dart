@@ -9,9 +9,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class QuerysRecord extends FirestoreRecord {
   QuerysRecord._(
-    super.reference,
-    super.data,
-  ) {
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
     _initializeFields();
   }
 
@@ -40,12 +40,18 @@ class QuerysRecord extends FirestoreRecord {
   int get numbers => _numbers ?? 0;
   bool hasNumbers() => _numbers != null;
 
+  // "response" field.
+  String? _response;
+  String get response => _response ?? '';
+  bool hasResponse() => _response != null;
+
   void _initializeFields() {
     _email = snapshotData['Email'] as String?;
     _timestamp = snapshotData['timestamp'] as DateTime?;
     _message = snapshotData['message'] as String?;
     _satus = snapshotData['satus'] as String?;
     _numbers = castToType<int>(snapshotData['numbers']);
+    _response = snapshotData['response'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -87,6 +93,7 @@ Map<String, dynamic> createQuerysRecordData({
   String? message,
   String? satus,
   int? numbers,
+  String? response,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -95,6 +102,7 @@ Map<String, dynamic> createQuerysRecordData({
       'message': message,
       'satus': satus,
       'numbers': numbers,
+      'response': response,
     }.withoutNulls,
   );
 
@@ -110,12 +118,13 @@ class QuerysRecordDocumentEquality implements Equality<QuerysRecord> {
         e1?.timestamp == e2?.timestamp &&
         e1?.message == e2?.message &&
         e1?.satus == e2?.satus &&
-        e1?.numbers == e2?.numbers;
+        e1?.numbers == e2?.numbers &&
+        e1?.response == e2?.response;
   }
 
   @override
-  int hash(QuerysRecord? e) => const ListEquality()
-      .hash([e?.email, e?.timestamp, e?.message, e?.satus, e?.numbers]);
+  int hash(QuerysRecord? e) => const ListEquality().hash(
+      [e?.email, e?.timestamp, e?.message, e?.satus, e?.numbers, e?.response]);
 
   @override
   bool isValidKey(Object? o) => o is QuerysRecord;

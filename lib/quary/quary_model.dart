@@ -1,6 +1,7 @@
 import '/components/stats_copy_widget.dart';
 import '/components/stats_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'quary_widget.dart' show QuaryWidget;
 import 'package:flutter/material.dart';
 

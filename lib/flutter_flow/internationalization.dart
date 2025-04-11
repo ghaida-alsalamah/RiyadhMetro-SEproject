@@ -437,11 +437,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pfgefynv': {
       'en': 'Home',
-      'ar': 'الرئيسية',
+      'ar': 'المنزل',
     },
     '3xvcctux': {
       'en': 'Work',
-      'ar': 'عمل',
+      'ar': 'العمل',
     },
     '0345yoa4': {
       'en': 'Gym',
@@ -459,54 +459,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // helpcenter
   {
     'lbw3sntz': {
-      'en': 'Frequently Asked Questions',
+      'en': 'Need Help?',
       'ar': 'الأسئلة الشائعة',
     },
-    'orcb98op': {
-      'en': 'How do I reset my password?',
-      'ar': 'كيف يمكنني إعادة تعيين كلمة المرور الخاصة بي؟',
-    },
-    'hb37qs3l': {
-      'en':
-          'To reset your password, go to the settings click the \"reset password\" option fill your email.',
-      'ar':
-          'لإعادة تعيين كلمة المرور الخاصة بك، انتقل إلى الإعدادات وانقر على خيار \"إعادة تعيين كلمة المرور\" وقم بتعبة بريدك الالكتروني.',
-    },
-    'zp8083r0': {
-      'en': 'How can I find the nearest station?',
-      'ar': 'كيف يمكنني العثور على أقرب محطة؟',
-    },
-    'wrguea86': {
-      'en':
-          'Use the Find Nearest Station feature, which uses GPS to locate the nearest metro station to your current location.',
-      'ar':
-          'استخدم ميزة البحث عن أقرب محطة، والتي تستخدم نظام تحديد المواقع العالمي (GPS) لتحديد أقرب محطة مترو إلى موقعك الحالي.',
-    },
-    't5qjwaf6': {
-      'en': 'Contact Support',
-      'ar': 'اتصل بالدعم',
-    },
-    'w68znebx': {
-      'en':
-          'If you couldn\'t find what you\'re looking for, send us an email and we\'ll get back to you within 24 hours.',
-      'ar':
-          'إذا لم تتمكن من العثور على ما تبحث عنه، أرسل لنا بريدًا إلكترونيًا وسنرد عليك خلال 24 ساعة.',
-    },
-    'q26s3i2n': {
-      'en': 'Describe your issue',
-      'ar': 'وصف مشكلتك',
-    },
-    'jhd20q5e': {
-      'en': '',
+    'mx5rxjjx': {
+      'en': 'View FAQs section',
       'ar': '',
     },
-    '8di7ihb3': {
-      'en': 'Send Email',
-      'ar': 'إرسال بريد إلكتروني',
+    '1oup2k3y': {
+      'en': 'Talk to our chatbot',
+      'ar': '',
     },
-    'oxhi5ojn': {
-      'en': 'Answer queries',
-      'ar': 'الرد على الاستفسارات',
+    '12aq5rm3': {
+      'en': 'Contact Support',
+      'ar': '',
+    },
+    '6i6g9qw2': {
+      'en':
+          'If you couldn\'t find what you\'re looking for, send us a quaryl and we\'ll get back to you as soon as possible :)',
+      'ar': '',
+    },
+    '6yssuc0r': {
+      'en': 'Type your question or describe the issue you\'re facing..',
+      'ar': '',
+    },
+    'q4wtxct8': {
+      'en': 'Send Query',
+      'ar': '',
+    },
+    'kwp4uphv': {
+      'en': 'View  previous queries',
+      'ar': '',
     },
     'izyxg6e9': {
       'en': 'Help Center',
@@ -548,7 +531,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dby74err': {
       'en': 'Answer Query',
-      'ar': 'ابحث عن المحطة',
+      'ar': 'اجابة الاستفسارات',
     },
     '23ml7gsq': {
       'en': 'Line Status',
@@ -1440,7 +1423,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الرد على الاستفسارات',
     },
     'wmtjq4xa': {
-      'en': 'Answer Queries',
+      'en': 'Answered Queries',
       'ar': 'الرد على الاستفسارات',
     },
   },
@@ -1453,6 +1436,192 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '2up29jez': {
       'en': 'Answer',
       'ar': 'إجابة',
+    },
+  },
+  // helpcenterCopy
+  {
+    '38rztn7w': {
+      'en': 'Frequently Asked Questions',
+      'ar': 'الأسئلة الشائعة',
+    },
+    '79ucp94l': {
+      'en': 'How do I reset my password?',
+      'ar': 'كيف يمكنني إعادة تعيين كلمة المرور الخاصة بي؟',
+    },
+    '7pdpg8uh': {
+      'en':
+          'To reset your password, go to the settings click the \"reset password\" option fill your email.',
+      'ar':
+          'لإعادة تعيين كلمة المرور الخاصة بك، انتقل إلى الإعدادات وانقر على خيار \"إعادة تعيين كلمة المرور\" وقم بتعبة بريدك الالكتروني.',
+    },
+    'zh5bke3e': {
+      'en': 'How can I find the nearest station?',
+      'ar': 'كيف يمكنني العثور على أقرب محطة؟',
+    },
+    'on9q1pj2': {
+      'en':
+          'Use the Find Nearest Station feature, which uses GPS to locate the nearest metro station to your current location.',
+      'ar':
+          'استخدم ميزة البحث عن أقرب محطة، والتي تستخدم نظام تحديد المواقع العالمي (GPS) لتحديد أقرب محطة مترو إلى موقعك الحالي.',
+    },
+    '6tppkhwp': {
+      'en': 'Contact Support',
+      'ar': 'اتصل بالدعم',
+    },
+    'a4ensh77': {
+      'en':
+          'If you couldn\'t find what you\'re looking for, send us an email and we\'ll get back to you within 24 hours.',
+      'ar':
+          'إذا لم تتمكن من العثور على ما تبحث عنه، أرسل لنا بريدًا إلكترونيًا وسنرد عليك خلال 24 ساعة.',
+    },
+    '76fnm29g': {
+      'en': 'Describe your issue',
+      'ar': 'وصف مشكلتك',
+    },
+    'nqk6kz18': {
+      'en': '',
+      'ar': '',
+    },
+    'l8dabad0': {
+      'en': 'Send Email',
+      'ar': 'إرسال بريد إلكتروني',
+    },
+    'bi6nri2u': {
+      'en': 'Answered queries',
+      'ar': 'الرد على الاستفسارات',
+    },
+    '03a3we20': {
+      'en': 'Help Center',
+      'ar': 'مركز المساعدة',
+    },
+    '2vqjsgne': {
+      'en': 'Home',
+      'ar': 'الرئيسية',
+    },
+  },
+  // FAQs
+  {
+    '983xsgo7': {
+      'en': 'Frequently Asked Questions',
+      'ar': 'الأسئلة الشائعة',
+    },
+    'ntm6wmde': {
+      'en': 'How do I reset my password?',
+      'ar': 'كيف يمكنني إعادة تعيين كلمة المرور الخاصة بي؟',
+    },
+    'g79g72pf': {
+      'en':
+          'To reset your password, go to the settings click the \"reset password\" option fill your email.',
+      'ar':
+          'لإعادة تعيين كلمة المرور الخاصة بك، انتقل إلى الإعدادات وانقر على خيار \"إعادة تعيين كلمة المرور\" وقم بتعبة بريدك الالكتروني.',
+    },
+    's9sut7ho': {
+      'en': 'How can I find the nearest station?',
+      'ar': 'كيف يمكنني العثور على أقرب محطة؟',
+    },
+    '6lnnqu8n': {
+      'en':
+          'Use the Find Nearest Station feature, which uses GPS to locate the nearest metro station to your current location.',
+      'ar':
+          'استخدم ميزة البحث عن أقرب محطة، والتي تستخدم نظام تحديد المواقع العالمي (GPS) لتحديد أقرب محطة مترو إلى موقعك الحالي.',
+    },
+    '661xget0': {
+      'en': 'Are there discounts for frequent travelers?',
+      'ar': '',
+    },
+    'bncdga7s': {
+      'en':
+          'Yes, we offer loyalty programs for frequent travelers. Check the Rewards section to see available discounts and how to qualify.',
+      'ar': '',
+    },
+    'i5grn4l0': {
+      'en': 'How do I check service disruptions?',
+      'ar': '',
+    },
+    'qx2lk0tz': {
+      'en':
+          'Service disruptions are displayed on the home screen. You can also check the Service Status section for detailed information about all routes.',
+      'ar': '',
+    },
+    'szwpkq5z': {
+      'en': 'Can I use the app offline?',
+      'ar': '',
+    },
+    'vppkcz05': {
+      'en':
+          'Yes, basic features like viewing purchased tickets and saved routes work offline. Real-time information requires an internet connection.',
+      'ar': '',
+    },
+    'm1hjt442': {
+      'en': 'How do I change my notification settings?',
+      'ar': '',
+    },
+    'w2soc1n9': {
+      'en':
+          'Go to Account Settings > Notifications to customize which alerts you receive and how you receive them.',
+      'ar': '',
+    },
+    'kyhkj0bi': {
+      'en': 'Is my personal information secure?',
+      'ar': '',
+    },
+    'dl5kxgsk': {
+      'en':
+          'Yes, we use industry-standard encryption to protect your data. Read our Privacy Policy for details on how we handle your information.',
+      'ar': '',
+    },
+    'x3r4kpwf': {
+      'en': 'Can I share my location with friends?',
+      'ar': '',
+    },
+    '84eigiv6': {
+      'en': 'Currently this feature isnt available we are working on it.',
+      'ar': '',
+    },
+    '954yxxdn': {
+      'en': 'How do I access my journey history?',
+      'ar': '',
+    },
+    '5x1p1ybn': {
+      'en':
+          'Your travel history is available in the Account section under \'Journey History\'. You can view your past trips.',
+      'ar': '',
+    },
+    'afr5t8bu': {
+      'en': 'How do I purchase tickets?',
+      'ar': '',
+    },
+    'bnadq96h': {
+      'en':
+          'You can purchase tickets through our app by selecting your destination and payment method. Digital tickets will be stored in your account.',
+      'ar': '',
+    },
+    'sg5tvtlj': {
+      'en': 'Help Center',
+      'ar': 'مركز المساعدة',
+    },
+    '52nz7trq': {
+      'en': 'Home',
+      'ar': 'الرئيسية',
+    },
+  },
+  // chatbot_wquestion
+  {
+    'bh9wy6u1': {
+      'en': 'Riyadh Metro Chatbot',
+      'ar': '',
+    },
+    'dors39u8': {
+      'en': 'You',
+      'ar': '',
+    },
+    '97auqtoo': {
+      'en': 'Chatbot',
+      'ar': '',
+    },
+    'czplphob': {
+      'en': 'Type your question here...',
+      'ar': '',
     },
   },
   // NoJourneys
@@ -1500,7 +1669,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'حقل النص',
     },
     'syb7m6ee': {
-      'en': 'submet',
+      'en': 'submit',
       'ar': 'فرعي',
     },
   },

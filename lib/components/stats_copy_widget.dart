@@ -43,7 +43,7 @@ class _StatsCopyWidgetState extends State<StatsCopyWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Material(
         color: Colors.transparent,
         elevation: 2.0,
@@ -57,7 +57,7 @@ class _StatsCopyWidgetState extends State<StatsCopyWidget> {
             borderRadius: BorderRadius.circular(12.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -66,7 +66,7 @@ class _StatsCopyWidgetState extends State<StatsCopyWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Expanded(
-                      child: SizedBox(
+                      child: Container(
                         width: 200.0,
                         child: TextFormField(
                           controller: _model.textController,
@@ -98,14 +98,14 @@ class _StatsCopyWidgetState extends State<StatsCopyWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
+                              borderSide: BorderSide(
                                 color: Color(0x00000000),
                                 width: 1.0,
                               ),
@@ -171,16 +171,22 @@ class _StatsCopyWidgetState extends State<StatsCopyWidget> {
                         },
                       ),
                     });
+
+                    await QuerysRecord.collection
+                        .doc()
+                        .set(createQuerysRecordData(
+                          response: _model.textController.text,
+                        ));
                   },
                   text: FFLocalizations.of(context).getText(
-                    'syb7m6ee' /* submet */,
+                    'syb7m6ee' /* submit */,
                   ),
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Plus Jakarta Sans',
@@ -191,7 +197,7 @@ class _StatsCopyWidgetState extends State<StatsCopyWidget> {
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
-              ].divide(const SizedBox(height: 16.0)),
+              ].divide(SizedBox(height: 16.0)),
             ),
           ),
         ),

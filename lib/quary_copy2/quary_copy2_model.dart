@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'quary_copy2_widget.dart' show QuaryCopy2Widget;
 import 'package:flutter/material.dart';
 

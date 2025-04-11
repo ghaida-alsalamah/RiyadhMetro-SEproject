@@ -5,9 +5,10 @@ import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
-import '/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -75,173 +76,188 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const HomepageWidget() : const LoginWidget(),
+          appStateNotifier.loggedIn ? HomepageWidget() : LoginWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const HomepageWidget() : const LoginWidget(),
+              appStateNotifier.loggedIn ? HomepageWidget() : LoginWidget(),
         ),
         FFRoute(
-          name: 'Login',
-          path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          name: LoginWidget.routeName,
+          path: LoginWidget.routePath,
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
-          name: 'CreateAccount1',
-          path: '/createAccount1',
-          builder: (context, params) => const CreateAccount1Widget(),
+          name: CreateAccount1Widget.routeName,
+          path: CreateAccount1Widget.routePath,
+          builder: (context, params) => CreateAccount1Widget(),
         ),
         FFRoute(
-          name: 'homepage',
-          path: '/homepage',
-          builder: (context, params) => const HomepageWidget(),
+          name: HomepageWidget.routeName,
+          path: HomepageWidget.routePath,
+          builder: (context, params) => HomepageWidget(),
         ),
         FFRoute(
-          name: 'settings',
-          path: '/settings',
-          builder: (context, params) => const SettingsWidget(),
+          name: SettingsWidget.routeName,
+          path: SettingsWidget.routePath,
+          builder: (context, params) => SettingsWidget(),
         ),
         FFRoute(
-          name: 'resetpass',
-          path: '/resetpass',
-          builder: (context, params) => const ResetpassWidget(),
+          name: ResetpassWidget.routeName,
+          path: ResetpassWidget.routePath,
+          builder: (context, params) => ResetpassWidget(),
         ),
         FFRoute(
-          name: 'about',
-          path: '/about',
-          builder: (context, params) => const AboutWidget(),
+          name: AboutWidget.routeName,
+          path: AboutWidget.routePath,
+          builder: (context, params) => AboutWidget(),
         ),
         FFRoute(
-          name: 'routemap',
-          path: '/routemap',
-          builder: (context, params) => const RoutemapWidget(),
+          name: RoutemapWidget.routeName,
+          path: RoutemapWidget.routePath,
+          builder: (context, params) => RoutemapWidget(),
         ),
         FFRoute(
-          name: 'favorites',
-          path: '/favorites',
-          builder: (context, params) => const FavoritesWidget(),
+          name: FavoritesWidget.routeName,
+          path: FavoritesWidget.routePath,
+          builder: (context, params) => FavoritesWidget(),
         ),
         FFRoute(
-          name: 'helpcenter',
-          path: '/helpcenter',
-          builder: (context, params) => const HelpcenterWidget(),
+          name: HelpcenterWidget.routeName,
+          path: HelpcenterWidget.routePath,
+          builder: (context, params) => HelpcenterWidget(),
         ),
         FFRoute(
-          name: 'nearest',
-          path: '/nearest',
-          builder: (context, params) => const NearestWidget(),
+          name: NearestWidget.routeName,
+          path: NearestWidget.routePath,
+          builder: (context, params) => NearestWidget(),
         ),
         FFRoute(
-          name: 'AdminHomePage',
-          path: '/adminHomePage',
-          builder: (context, params) => const AdminHomePageWidget(),
+          name: AdminHomePageWidget.routeName,
+          path: AdminHomePageWidget.routePath,
+          builder: (context, params) => AdminHomePageWidget(),
         ),
         FFRoute(
-          name: 'AdminSettings',
-          path: '/adminSettings',
-          builder: (context, params) => const AdminSettingsWidget(),
+          name: AdminSettingsWidget.routeName,
+          path: AdminSettingsWidget.routePath,
+          builder: (context, params) => AdminSettingsWidget(),
         ),
         FFRoute(
-          name: 'AdminLogin',
-          path: '/adminLogin',
-          builder: (context, params) => const AdminLoginWidget(),
+          name: AdminLoginWidget.routeName,
+          path: AdminLoginWidget.routePath,
+          builder: (context, params) => AdminLoginWidget(),
         ),
         FFRoute(
-          name: 'puechaseticket',
-          path: '/puechaseticket',
-          builder: (context, params) => const PuechaseticketWidget(),
+          name: PuechaseticketWidget.routeName,
+          path: PuechaseticketWidget.routePath,
+          builder: (context, params) => PuechaseticketWidget(),
         ),
         FFRoute(
-          name: 'JourneyHistory',
-          path: '/journeyHistory',
-          builder: (context, params) => const JourneyHistoryWidget(),
+          name: JourneyHistoryWidget.routeName,
+          path: JourneyHistoryWidget.routePath,
+          builder: (context, params) => JourneyHistoryWidget(),
         ),
         FFRoute(
-          name: 'sendnotifications',
-          path: '/sendnotifications',
-          builder: (context, params) => const SendnotificationsWidget(),
+          name: SendnotificationsWidget.routeName,
+          path: SendnotificationsWidget.routePath,
+          builder: (context, params) => SendnotificationsWidget(),
         ),
         FFRoute(
-          name: 'schedulemaintenance',
-          path: '/schedulemaintenance',
-          builder: (context, params) => const SchedulemaintenanceWidget(),
+          name: SchedulemaintenanceWidget.routeName,
+          path: SchedulemaintenanceWidget.routePath,
+          builder: (context, params) => SchedulemaintenanceWidget(),
         ),
         FFRoute(
-          name: 'quary',
-          path: '/quary',
-          builder: (context, params) => const QuaryWidget(),
+          name: QuaryWidget.routeName,
+          path: QuaryWidget.routePath,
+          builder: (context, params) => QuaryWidget(),
         ),
         FFRoute(
-          name: 'resetpassCopy_admin',
-          path: '/resetpassCopy_admin',
-          builder: (context, params) => const ResetpassCopyAdminWidget(),
+          name: ResetpassCopyAdminWidget.routeName,
+          path: ResetpassCopyAdminWidget.routePath,
+          builder: (context, params) => ResetpassCopyAdminWidget(),
         ),
         FFRoute(
-          name: 'AdminResetLogIn',
-          path: '/AdminResetLogIn',
-          builder: (context, params) => const AdminResetLogInWidget(),
+          name: AdminResetLogInWidget.routeName,
+          path: AdminResetLogInWidget.routePath,
+          builder: (context, params) => AdminResetLogInWidget(),
         ),
         FFRoute(
-          name: 'PassResetLogIn',
-          path: '/PassResetLogIn',
-          builder: (context, params) => const PassResetLogInWidget(),
+          name: PassResetLogInWidget.routeName,
+          path: PassResetLogInWidget.routePath,
+          builder: (context, params) => PassResetLogInWidget(),
         ),
         FFRoute(
-          name: 'test_JourneyHistory',
-          path: '/testJourneyHistory',
-          builder: (context, params) => const TestJourneyHistoryWidget(),
+          name: TestJourneyHistoryWidget.routeName,
+          path: TestJourneyHistoryWidget.routePath,
+          builder: (context, params) => TestJourneyHistoryWidget(),
         ),
         FFRoute(
-          name: 'lines',
-          path: '/lines',
-          builder: (context, params) => const LinesWidget(),
+          name: LinesWidget.routeName,
+          path: LinesWidget.routePath,
+          builder: (context, params) => LinesWidget(),
         ),
         FFRoute(
-          name: 'blueLine',
-          path: '/blueLine',
-          builder: (context, params) => const BlueLineWidget(),
+          name: BlueLineWidget.routeName,
+          path: BlueLineWidget.routePath,
+          builder: (context, params) => BlueLineWidget(),
         ),
         FFRoute(
-          name: 'orangeLine',
-          path: '/orangeLine',
-          builder: (context, params) => const OrangeLineWidget(),
+          name: OrangeLineWidget.routeName,
+          path: OrangeLineWidget.routePath,
+          builder: (context, params) => OrangeLineWidget(),
         ),
         FFRoute(
-          name: 'RedLine',
-          path: '/redLine',
-          builder: (context, params) => const RedLineWidget(),
+          name: RedLineWidget.routeName,
+          path: RedLineWidget.routePath,
+          builder: (context, params) => RedLineWidget(),
         ),
         FFRoute(
-          name: 'PurpleLine',
-          path: '/purpleLine',
-          builder: (context, params) => const PurpleLineWidget(),
+          name: PurpleLineWidget.routeName,
+          path: PurpleLineWidget.routePath,
+          builder: (context, params) => PurpleLineWidget(),
         ),
         FFRoute(
-          name: 'YellowLine',
-          path: '/yellowLine',
-          builder: (context, params) => const YellowLineWidget(),
+          name: YellowLineWidget.routeName,
+          path: YellowLineWidget.routePath,
+          builder: (context, params) => YellowLineWidget(),
         ),
         FFRoute(
-          name: 'GreenLine',
-          path: '/greenLine',
-          builder: (context, params) => const GreenLineWidget(),
+          name: GreenLineWidget.routeName,
+          path: GreenLineWidget.routePath,
+          builder: (context, params) => GreenLineWidget(),
         ),
         FFRoute(
-          name: 'route_and_Lines',
-          path: '/routeAndLines',
-          builder: (context, params) => const RouteAndLinesWidget(),
+          name: RouteAndLinesWidget.routeName,
+          path: RouteAndLinesWidget.routePath,
+          builder: (context, params) => RouteAndLinesWidget(),
         ),
         FFRoute(
-          name: 'quaryCopy',
-          path: '/quaryCopy',
-          builder: (context, params) => const QuaryCopyWidget(),
+          name: QuaryCopyWidget.routeName,
+          path: QuaryCopyWidget.routePath,
+          builder: (context, params) => QuaryCopyWidget(),
         ),
         FFRoute(
-          name: 'quaryCopy2',
-          path: '/quaryCopy2',
-          builder: (context, params) => const QuaryCopy2Widget(),
+          name: QuaryCopy2Widget.routeName,
+          path: QuaryCopy2Widget.routePath,
+          builder: (context, params) => QuaryCopy2Widget(),
+        ),
+        FFRoute(
+          name: HelpcenterCopyWidget.routeName,
+          path: HelpcenterCopyWidget.routePath,
+          builder: (context, params) => HelpcenterCopyWidget(),
+        ),
+        FFRoute(
+          name: FAQsWidget.routeName,
+          path: FAQsWidget.routePath,
+          builder: (context, params) => FAQsWidget(),
+        ),
+        FFRoute(
+          name: ChatbotWquestionWidget.routeName,
+          path: ChatbotWquestionWidget.routePath,
+          builder: (context, params) => ChatbotWquestionWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -479,7 +495,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

@@ -1,7 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'quary_copy_model.dart';
 export 'quary_copy_model.dart';
@@ -9,6 +11,9 @@ export 'quary_copy_model.dart';
 /// admin page to answer quary from passengers
 class QuaryCopyWidget extends StatefulWidget {
   const QuaryCopyWidget({super.key});
+
+  static String routeName = 'quaryCopy';
+  static String routePath = '/quaryCopy';
 
   @override
   State<QuaryCopyWidget> createState() => _QuaryCopyWidgetState();
@@ -36,251 +41,244 @@ class _QuaryCopyWidgetState extends State<QuaryCopyWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Title(
-        title: 'quaryCopy',
-        color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
-        child: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-            FocusManager.instance.primaryFocus?.unfocus();
-          },
-          child: Scaffold(
-            key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-            appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
-              automaticallyImplyLeading: false,
-              leading: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed('helpcenter');
-                },
-                child: Icon(
-                  Icons.arrow_back,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 24.0,
-                ),
-              ),
-              title: Text(
-                FFLocalizations.of(context).getText(
-                  'nk73dmnb' /* Respond Queries */,
-                ),
-                style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Urbanist',
-                      color: FlutterFlowTheme.of(context).primaryText,
-                      letterSpacing: 0.0,
-                    ),
-              ),
-              actions: [
-                FlutterFlowIconButton(
-                  buttonSize: 48.0,
-                  icon: Icon(
-                    Icons.notifications_none,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 24.0,
-                  ),
-                  onPressed: () {
-                    print('IconButton pressed ...');
-                  },
-                ),
-              ],
-              centerTitle: false,
-              elevation: 2.0,
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        appBar: AppBar(
+          backgroundColor: FlutterFlowTheme.of(context).primary,
+          automaticallyImplyLeading: false,
+          leading: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.pushNamed(HelpcenterWidget.routeName);
+            },
+            child: Icon(
+              Icons.arrow_back,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 24.0,
             ),
-            body: SafeArea(
-              top: true,
-              child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
-                child: SingleChildScrollView(
-                  primary: false,
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      StreamBuilder<List<AdminqRecord>>(
-                        stream: queryAdminqRecord(
-                          queryBuilder: (adminqRecord) => adminqRecord
-                              .where(
-                                'status',
-                                isEqualTo: valueOrDefault<String>(
-                                  '',
-                                  'solved',
-                                ),
-                              )
-                              .orderBy('timestamp', descending: true),
-                          singleRecord: true,
-                        ),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<AdminqRecord> containerAdminqRecordList =
-                              snapshot.data!;
-                          // Return an empty Container when the item does not exist.
-                          if (snapshot.data!.isEmpty) {
-                            return Container();
-                          }
-                          final containerAdminqRecord =
-                              containerAdminqRecordList.isNotEmpty
-                                  ? containerAdminqRecordList.first
-                                  : null;
-
-                          return Material(
-                            color: Colors.transparent,
-                            elevation: 2.0,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
+          ),
+          title: Text(
+            FFLocalizations.of(context).getText(
+              'nk73dmnb' /* Respond Queries */,
+            ),
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Urbanist',
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  letterSpacing: 0.0,
+                ),
+          ),
+          actions: [
+            FlutterFlowIconButton(
+              buttonSize: 48.0,
+              icon: Icon(
+                Icons.notifications_none,
+                color: FlutterFlowTheme.of(context).primaryText,
+                size: 24.0,
+              ),
+              onPressed: () {
+                print('IconButton pressed ...');
+              },
+            ),
+          ],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
+        body: SafeArea(
+          top: true,
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+            child: SingleChildScrollView(
+              primary: false,
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  StreamBuilder<List<QuerysRecord>>(
+                    stream: queryQuerysRecord(
+                      queryBuilder: (querysRecord) => querysRecord
+                          .where(
+                            'Email',
+                            isEqualTo: currentUserEmail,
+                          )
+                          .where(
+                            'satus',
+                            isEqualTo: valueOrDefault<String>(
+                              '',
+                              'solved',
                             ),
-                            child: Container(
-                              width: MediaQuery.sizeOf(context).width * 1.114,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.circular(12.0),
+                          )
+                          .orderBy('timestamp', descending: true),
+                      singleRecord: true,
+                    ),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
                               ),
-                              child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 16.0, 16.0, 16.0),
-                                child: Column(
+                            ),
+                          ),
+                        );
+                      }
+                      List<QuerysRecord> containerQuerysRecordList =
+                          snapshot.data!;
+                      // Return an empty Container when the item does not exist.
+                      if (snapshot.data!.isEmpty) {
+                        return Container();
+                      }
+                      final containerQuerysRecord =
+                          containerQuerysRecordList.isNotEmpty
+                              ? containerQuerysRecordList.first
+                              : null;
+
+                      return Material(
+                        color: Colors.transparent,
+                        elevation: 2.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 1.114,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 16.0, 16.0, 16.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Row(
+                                    Column(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'wmtjq4xa' /* Answer Queries */,
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'wmtjq4xa' /* Answered Queries */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineSmall
+                                              .override(
+                                                fontFamily: 'Urbanist',
+                                                letterSpacing: 0.0,
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall
-                                                      .override(
-                                                        fontFamily: 'Urbanist',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                          ],
                                         ),
                                       ],
                                     ),
+                                  ],
+                                ),
+                                Container(
+                                  width: MediaQuery.sizeOf(context).width * 1.0,
+                                  height: 1.0,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                  ),
+                                ),
+                                ListView(
+                                  padding: EdgeInsets.zero,
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  children: [
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           1.0,
-                                      height: 1.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .alternate,
+                                            .primaryBackground,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
-                                    ),
-                                    ListView(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      children: [
-                                        Container(
-                                          width:
-                                              MediaQuery.sizeOf(context).width *
-                                                  1.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 16.0, 16.0, 16.0),
-                                            child: Column(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 16.0, 16.0, 16.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Row(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
                                               children: [
-                                                Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      dateTimeFormat(
-                                                        "yMMMd",
-                                                        containerAdminqRecord!
-                                                            .timestamp!,
-                                                        locale:
-                                                            FFLocalizations.of(
-                                                                    context)
-                                                                .languageCode,
-                                                      ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodySmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
-                                                    ),
-                                                  ],
-                                                ),
                                                 Text(
-                                                  containerAdminqRecord
-                                                      .hasMessage()
-                                                      .toString(),
-                                                  textAlign: TextAlign.start,
+                                                  dateTimeFormat(
+                                                    "yMMMd",
+                                                    containerQuerysRecord!
+                                                        .timestamp!,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
+                                                      .bodySmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Plus Jakarta Sans',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                              ],
+                                            ),
+                                            Text(
+                                              containerQuerysRecord
+                                                  .hasMessage()
+                                                  .toString(),
+                                              textAlign: TextAlign.start,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
                                                         fontFamily:
                                                             'Plus Jakarta Sans',
                                                         letterSpacing: 0.0,
                                                       ),
-                                                ),
-                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
-                                          ),
+                                          ].divide(SizedBox(height: 12.0)),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ],
                                 ),
-                              ),
+                              ].divide(SizedBox(height: 16.0)),
                             ),
-                          );
-                        },
-                      ),
-                    ].divide(const SizedBox(height: 24.0)),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                ),
+                ].divide(SizedBox(height: 24.0)),
               ),
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
