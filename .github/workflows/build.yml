@@ -1,0 +1,36 @@
+name: SonarCloud
+
+on:
+  push:
+    branches:
+      - flutterflow
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.16.4'
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run SonarCloud Analysis
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
