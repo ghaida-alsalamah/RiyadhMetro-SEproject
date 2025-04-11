@@ -1,0 +1,21 @@
+name: Code Climate Analysis
+
+on:
+  push:
+    branches:
+      - flutterflow
+  pull_request:
+    branches:
+      - flutterflow
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Code Climate analysis
+        uses: paambaati/codeclimate-action@v4.0.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
