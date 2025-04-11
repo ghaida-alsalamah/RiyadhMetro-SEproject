@@ -35,6 +35,8 @@ jobs:
         with:
           organization: ghaida-alsalamah
           projectKey: ghaida-alsalamah_SWproject1
+          projectBaseDir: .
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
