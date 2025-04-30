@@ -1,17 +1,22 @@
-name: Super-Linter
+name: Dart Analyzer
 
-on: push
+on: 
+  push:
+    branches: [main, flutterflow]
 
 jobs:
-  super-lint:
-    name: Lint code base
+  dart-analysis:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
 
-      - name: Run Super-Linter
-        uses: github/super-linter@v4
-        env:
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Analyze project source
+        run: dart analyze
+
