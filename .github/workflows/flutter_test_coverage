@@ -1,7 +1,6 @@
 name: Dart Tests with Coverage
 
 on: [push, pull_request]
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -9,17 +8,23 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Dart
-        uses: dart-lang/setup-dart@v1
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.0' # Or your Flutter version
 
       - name: Install dependencies
-        run: dart pub get
+        run: flutter pub get
+
+      - name: Add Dart tool to PATH
+        run: echo "$HOME/.pub-cache/bin" >> $GITHUB_PATH
 
       - name: Run tests with coverage
         run: |
-          dart pub global activate coverage
-          dart test --coverage=coverage
-          dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
+          flutter pub global activate coverage
+          flutter test --coverage
+          flutter pub global run coverage:format_coverage \
+            --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
 
       - name: Upload coverage to Code Climate
         uses: paambaati/codeclimate-action@v5.0.0
@@ -27,3 +32,4 @@ jobs:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
           coverageLocations: coverage/lcov.info:lcov
+
