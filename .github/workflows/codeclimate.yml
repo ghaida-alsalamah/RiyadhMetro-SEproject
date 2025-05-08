@@ -15,7 +15,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Run tests and generate coverage
+        run: |
+          # Replace the following with your actual test command
+          npm install
+          npm test -- --coverage
+
       - name: Run Code Climate analysis
         uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
+        with:
+          coverageCommand: npm test -- --coverage
+          coverageInputType: lcov
