@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run Code Climate analysis
-        uses: paambaati/codeclimate-action@v4.0.0
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
