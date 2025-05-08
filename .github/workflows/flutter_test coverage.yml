@@ -3,10 +3,7 @@ name: Flutter Test Coverage
 on:
   push:
     branches:
-      - flutterflow
-  pull_request:
-    branches:
-      - flutterflow
+      - main
 
 jobs:
   test:
@@ -16,23 +13,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.16.4'
+      - name: Set up Dart
+        uses: dart-lang/setup-dart@v1
 
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+          dart pub get
+          
+      - name: Print pubspec.yaml (for debugging)
+        run: cat pubspec.yaml
 
       - name: Run tests with coverage
         run: |
-          flutter pub global activate coverage
-          flutter test --coverage
-          flutter pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
+          dart pub global activate coverage
+          dart test --coverage=coverage
+          dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info --report-on=lib
 
-      - name: Upload coverage to Code Climate
-        uses: paambaati/codeclimate-action@v5.0.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageLocations: coverage/lcov.info:lcov
+# Uncomment below after tests pass
+#      - name: Upload coverage to Code Climate
+#        uses: paambaati/codeclimate-action@v5.0.0
+#        env:
+#          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+#        with:
+#          coverageLocations: coverage/lcov.info:lcov
