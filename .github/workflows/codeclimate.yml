@@ -1,4 +1,4 @@
-name: Code Climate Analysis
+name: Flutter Test Coverage
 
 on:
   push:
@@ -15,16 +15,26 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run tests and generate coverage
-        run: |
-          # Replace the following with your actual test command
-          npm install
-          npm test -- --coverage
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.0'  # or your project's version
 
-      - name: Run Code Climate analysis
-        uses: paambaati/codeclimate-action@v3.0.0
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Run tests with coverage
+        run: |
+          flutter test --coverage
+
+      - name: Install lcov
+        run: sudo apt-get install lcov
+
+      - name: Upload coverage to Code Climate
+        uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
         with:
-          coverageCommand: npm test -- --coverage
-          coverageInputType: lcov
+          coverageLocations: coverage/lcov.info:lcov
+
+
