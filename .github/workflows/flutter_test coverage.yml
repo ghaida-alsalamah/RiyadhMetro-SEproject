@@ -5,6 +5,6 @@
   if: success() || failure()
 - uses: ueki-tomohiro/flutter-test-action@v1
   with:
-    machinPath: test.json
+    machinePath: test.json
     coveragePath: coverage/lcov.info
   if: success() || failure()
