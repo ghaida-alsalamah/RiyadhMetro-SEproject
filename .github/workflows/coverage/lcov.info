@@ -1,0 +1,6 @@
+- name: Upload coverage to Code Climate
+  uses: paambaati/codeclimate-action@v5.0.0
+  env:
+    CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_REPO_TOKEN }}
+  with:
+    coverageLocations: coverage/lcov.info:lcov
