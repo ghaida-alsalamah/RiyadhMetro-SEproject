@@ -1,4 +1,4 @@
-- name:Flutter Test Coverage
+- name: Flutter Test Coverage
   run: flutter test --machine > test.json
 - name: flutter test
   run: flutter test --coverage
