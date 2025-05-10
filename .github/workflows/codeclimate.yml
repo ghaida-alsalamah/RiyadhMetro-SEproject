@@ -39,3 +39,12 @@ jobs:
         with:
           coverageLocations: coverage/lcov.info:lcov
 
+      - name: Run tests with coverage
+        run: flutter test --coverage
+        
+      - name: Generate LCOV report
+        run: genhtml coverage/lcov.info --output-directory coverage/html
+      - name: Publish coverage
+        run: ./cc-reporter after-build --exit-code $?
+          
+
