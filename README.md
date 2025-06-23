@@ -1,7 +1,7 @@
 # RiyadhMetro
 
 https://riyadhmetro-seproject.flutterflow.app/
-More than just tickets, enjoy a smarte rmore connected metro experience with RiyadhMetro!
+More than just tickets, enjoy a smarter more connected metro experience with RiyadhMetro!
 
 
 by:
